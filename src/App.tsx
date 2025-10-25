@@ -8,6 +8,7 @@ import Navigation from "@/components/layout/Navigation";
 import Home from "./pages/Home";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
+import CreatePathway from "./pages/creator/CreatePathway";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/auth" element={<Auth />} />
+            <Route path="/creator/pathway/new" element={<CreatePathway />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
