@@ -9,6 +9,8 @@ import Home from "./pages/Home";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
 import CreatePathway from "./pages/creator/CreatePathway";
+import BrowsePathways from "./pages/consumer/BrowsePathways";
+import PathwayDetail from "./pages/consumer/PathwayDetail";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +25,8 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/auth" element={<Auth />} />
+            <Route path="/browse" element={<BrowsePathways />} />
+            <Route path="/pathway/:id" element={<PathwayDetail />} />
             <Route path="/creator/pathway/new" element={<CreatePathway />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

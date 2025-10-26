@@ -36,14 +36,12 @@ const Navigation = () => {
         <div className="flex items-center gap-4">
           {user ? (
             <>
-              {userRole === 'consumer' && (
-                <Button variant="ghost" asChild>
-                  <Link to="/browse" className="flex items-center gap-2">
-                    <BookOpen className="w-4 h-4" />
-                    Browse Pathways
-                  </Link>
-                </Button>
-              )}
+              <Button variant="ghost" asChild>
+                <Link to="/browse" className="flex items-center gap-2">
+                  <BookOpen className="w-4 h-4" />
+                  Browse Pathways
+                </Link>
+              </Button>
               
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>

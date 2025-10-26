@@ -183,7 +183,7 @@ export type Database = {
       }
       courses: {
         Row: {
-          content_url: string | null
+          course_program_name: string | null
           created_at: string
           description: string | null
           duration_minutes: number | null
@@ -192,10 +192,9 @@ export type Database = {
           order_index: number
           title: string
           updated_at: string
-          xp_points: number | null
         }
         Insert: {
-          content_url?: string | null
+          course_program_name?: string | null
           created_at?: string
           description?: string | null
           duration_minutes?: number | null
@@ -204,10 +203,9 @@ export type Database = {
           order_index: number
           title: string
           updated_at?: string
-          xp_points?: number | null
         }
         Update: {
-          content_url?: string | null
+          course_program_name?: string | null
           created_at?: string
           description?: string | null
           duration_minutes?: number | null
@@ -216,7 +214,6 @@ export type Database = {
           order_index?: number
           title?: string
           updated_at?: string
-          xp_points?: number | null
         }
         Relationships: [
           {

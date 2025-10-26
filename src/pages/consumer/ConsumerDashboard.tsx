@@ -5,7 +5,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { Award, BookOpen, TrendingUp, Trophy } from 'lucide-react';
+import { Award, BookOpen, TrendingUp, Trophy, Search } from 'lucide-react';
 
 interface EnrolledPathway {
   id: string;
@@ -82,7 +82,10 @@ const ConsumerDashboard = () => {
           <p className="text-muted-foreground">Track your progress and continue learning</p>
         </div>
         <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary">
-          <Link to="/browse">Explore Pathways</Link>
+          <Link to="/browse" className="flex items-center gap-2">
+            <Search className="w-4 h-4" />
+            Browse Pathways
+          </Link>
         </Button>
       </div>
 
