@@ -81,12 +81,12 @@ const ConsumerDashboard = () => {
           <h1 className="text-4xl font-bold mb-2">My Learning Journey</h1>
           <p className="text-muted-foreground">Track your progress and continue learning</p>
         </div>
-        <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary">
-          <Link to="/browse" className="flex items-center gap-2">
-            <Search className="w-4 h-4" />
-            Browse Pathways
-          </Link>
-        </Button>
+              <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary">
+                <Link to="/browse" className="flex items-center gap-2">
+                  <Search className="w-4 h-4" />
+                  Browse Pathways
+                </Link>
+              </Button>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">

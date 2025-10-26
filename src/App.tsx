@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
 import Navigation from "@/components/layout/Navigation";
 import Home from "./pages/Home";
+import LandingPage from "./pages/LandingPage";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
 import CreatePathway from "./pages/creator/CreatePathway";
@@ -23,7 +24,8 @@ const App = () => (
         <AuthProvider>
           <Navigation />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/dashboard" element={<Home />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/browse" element={<BrowsePathways />} />
             <Route path="/pathway/:id" element={<PathwayDetail />} />
