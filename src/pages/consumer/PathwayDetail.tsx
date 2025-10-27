@@ -276,8 +276,62 @@ const PathwayDetail = () => {
                 )}
               </TabsContent>
 
-              <TabsContent value="content" className="space-y-4">
-                {pathway.milestones
+              <TabsContent value="content" className="space-y-6">
+                {/* Pre-Assessment Section */}
+                {pathway.milestones.length > 0 && pathway.milestones[0].assessments && pathway.milestones[0].assessments.length > 0 && (
+                  <Card className="border-2 border-primary/30 bg-gradient-to-br from-primary/5 via-secondary/5 to-background">
+                    <CardHeader>
+                      <div className="flex items-start gap-4">
+                        <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0">
+                          <FileText className="w-7 h-7 text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-2">
+                            <Badge className="bg-primary text-white hover:bg-primary/90">
+                              Pre-Assessment
+                            </Badge>
+                            <Badge variant="outline">
+                              {pathway.milestones[0].assessments[0].total_questions} Questions
+                            </Badge>
+                          </div>
+                          <CardTitle className="text-xl mb-2">
+                            {pathway.milestones[0].assessments[0].title}
+                          </CardTitle>
+                          <CardDescription className="text-base">
+                            {pathway.milestones[0].assessments[0].description || 
+                             `Test your knowledge before starting this learning pathway. Passing score: ${pathway.milestones[0].assessments[0].passing_score}%`}
+                          </CardDescription>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center justify-between flex-wrap gap-4">
+                        <div className="flex items-center gap-6 text-sm text-muted-foreground">
+                          <div className="flex items-center gap-2">
+                            <Clock className="w-4 h-4" />
+                            <span>~{pathway.milestones[0].assessments[0].total_questions * 2} minutes</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Award className="w-4 h-4 text-primary" />
+                            <span>Passing: {pathway.milestones[0].assessments[0].passing_score}%</span>
+                          </div>
+                        </div>
+                        <Button size="lg" className="gap-2">
+                          <FileText className="w-4 h-4" />
+                          Start Pre-Assessment
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                )}
+
+                {/* Learning Modules */}
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-semibold">Learning Modules</h3>
+                    <Badge variant="secondary">{pathway.milestones.length} Modules</Badge>
+                  </div>
+                  {pathway.milestones
                   .sort((a, b) => a.order_index - b.order_index)
                   .map((milestone, index) => {
                     const isExpanded = expandedMilestones.includes(milestone.id);
@@ -363,6 +417,7 @@ const PathwayDetail = () => {
                       </Card>
                     );
                   })}
+                </div>
               </TabsContent>
 
               <TabsContent value="comments">
